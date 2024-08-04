@@ -1,0 +1,393 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "d55b307b-d94f-42ff-b4f7-f0a03368e63b",
+      "name": "File Manager",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-08-04T19:46:53.000Z",
+      "createdAt": "2024-08-04T19:40:36.000Z",
+      "lastUpdatedBy": "29493313",
+      "uid": "29493313-d55b307b-d94f-42ff-b4f7-f0a03368e63b"
+    },
+    "item": [
+      {
+        "name": "Auth",
+        "item": [
+          {
+            "name": "Signup",
+            "id": "168871e3-2e33-4b31-90f8-5e3fd5a825dc",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "auth": { "type": "inherit" },
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"username\": \"test5\",\r\n    \"email\": \"test5@gmail.com\",\r\n    \"password\": \"testpassword\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/auth/signup",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["auth", "signup"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-168871e3-2e33-4b31-90f8-5e3fd5a825dc"
+          },
+          {
+            "name": "Login",
+            "id": "c258adc2-465e-4dd9-bdd4-7ce569075c41",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "auth": { "type": "inherit" },
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"email\": \"test5@gmail.com\",\r\n    \"password\": \"testpassword\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/auth/login",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["auth", "login"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-c258adc2-465e-4dd9-bdd4-7ce569075c41"
+          }
+        ],
+        "id": "e368f1c0-fb8c-4f56-8b59-6d8eb6bf6809",
+        "uid": "29493313-e368f1c0-fb8c-4f56-8b59-6d8eb6bf6809"
+      },
+      {
+        "name": "Folder",
+        "item": [
+          {
+            "name": "Add Root Folder",
+            "id": "a8653361-5de6-4def-9c19-06fcd0be9e6d",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"test50\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/folder/",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", ""]
+              }
+            },
+            "response": [],
+            "uid": "29493313-a8653361-5de6-4def-9c19-06fcd0be9e6d"
+          },
+          {
+            "name": "Add Sub Folder",
+            "id": "437f5aaf-dd4a-48ab-a463-bc1001950a23",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "auth": {
+                "type": "jwt",
+                "jwt": [
+                  { "key": "algorithm", "value": "HS256", "type": "string" },
+                  {
+                    "key": "isSecretBase64Encoded",
+                    "value": false,
+                    "type": "boolean"
+                  },
+                  { "key": "payload", "value": "{}", "type": "string" },
+                  { "key": "addTokenTo", "value": "header", "type": "string" },
+                  {
+                    "key": "headerPrefix",
+                    "value": "Bearer",
+                    "type": "string"
+                  },
+                  {
+                    "key": "queryParamKey",
+                    "value": "token",
+                    "type": "string"
+                  },
+                  { "key": "header", "value": "{}", "type": "string" }
+                ]
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"test5\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/folder/17",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", "17"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-437f5aaf-dd4a-48ab-a463-bc1001950a23"
+          },
+          {
+            "name": "Rename Folder",
+            "id": "d5a2e6d0-41c4-4742-816c-c3cd8771aeac",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"test51\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/folder/17",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", "17"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-d5a2e6d0-41c4-4742-816c-c3cd8771aeac"
+          },
+          {
+            "name": "Remove Folder",
+            "id": "490a04e4-ece9-48a0-8c19-ea54dfbbd4e3",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/folder/17",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", "17"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-490a04e4-ece9-48a0-8c19-ea54dfbbd4e3"
+          },
+          {
+            "name": "Get Sub Folders by Parent Folder Id",
+            "id": "f7786236-2ef4-4363-aaf3-92d03e70ad05",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/folder/10",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", "10"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-f7786236-2ef4-4363-aaf3-92d03e70ad05"
+          },
+          {
+            "name": "Get Root Folders",
+            "id": "f1b84fb1-5186-49ac-8e51-379785aeb64c",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/folder/",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["folder", ""]
+              }
+            },
+            "response": [],
+            "uid": "29493313-f1b84fb1-5186-49ac-8e51-379785aeb64c"
+          }
+        ],
+        "id": "3e16dc95-55e0-41ae-b463-aa06179e89b4",
+        "uid": "29493313-3e16dc95-55e0-41ae-b463-aa06179e89b4"
+      },
+      {
+        "name": "File",
+        "item": [
+          {
+            "name": "Add file",
+            "id": "05d9c88f-306b-4ef0-b2ae-de5c6121e7da",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "file",
+                    "type": "file",
+                    "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                    "filesNotInWorkingDirectory": [
+                      "/C:/Users/Shreyash Daundkar/Downloads/Backend Assignment.pdf"
+                    ],
+                    "src": "/C:/Users/Shreyash Daundkar/Downloads/Backend Assignment.pdf"
+                  }
+                ]
+              },
+              "url": {
+                "raw": "localhost:3000/file/10",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["file", "10"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-05d9c88f-306b-4ef0-b2ae-de5c6121e7da"
+          },
+          {
+            "name": "Rename File",
+            "id": "cf789c12-9255-4b2d-84c0-4a79b4d098c0",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"testfile1\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "localhost:3000/file/5",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["file", "5"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-cf789c12-9255-4b2d-84c0-4a79b4d098c0"
+          },
+          {
+            "name": "Move File",
+            "id": "e5caf560-4ac8-4a6b-8978-6089f7aa3353",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/file/5/11",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["file", "5", "11"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-e5caf560-4ac8-4a6b-8978-6089f7aa3353"
+          },
+          {
+            "name": "Remove File",
+            "id": "5dc008a4-63be-4181-a72a-29db0e74704c",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/file/5",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["file", "5"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-5dc008a4-63be-4181-a72a-29db0e74704c"
+          },
+          {
+            "name": "Get file by FolderId",
+            "id": "a5b6d9a8-01ec-46a0-af24-3c8d718a614d",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjY4NTUyMX0.6bHUN7g9r7OLocoyZsFRS2NWxA1Z43ZPD6K_vN_HS-8",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "localhost:3000/file/10",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["file", "10"]
+              }
+            },
+            "response": [],
+            "uid": "29493313-a5b6d9a8-01ec-46a0-af24-3c8d718a614d"
+          }
+        ],
+        "id": "edafb9bc-a1cb-4939-9f02-8fcb52bb0cea",
+        "uid": "29493313-edafb9bc-a1cb-4939-9f02-8fcb52bb0cea"
+      }
+    ]
+  }
+}
