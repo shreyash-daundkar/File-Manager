@@ -2,6 +2,10 @@
 
 A simple API to store and manage your folders and files
 
+##  database schema
+
+![database schema](Database-Schema.png)
+
 ## Set up
 
 To set up the project locally, follow these steps:
